@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 // React Router Dom
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -13,16 +13,21 @@ import Search from './pages/Search';
 import Bookmarks from './pages/Bookmarks';
 import PageNotFound from './pages/PageNotFound';
 
+import TopNav from './layout/TopNav';
+
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/search' component={Search} />
-          <Route exact path='/bookmarks' component={Bookmarks} />
-          <Route component={PageNotFound} />
-        </Switch>
+        <Fragment>
+          <TopNav />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/search' exact component={Search} />
+            <Route path='/bookmarks' exact component={Bookmarks} />
+            <Route component={PageNotFound} />
+          </Switch>
+        </Fragment>
       </Router>
     </Provider>
   );
