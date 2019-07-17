@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import CategorySourceSearch from '../components/CategorySourceSearch';
+import CategorySourceSearchForm from '../components/CategorySourceSearchForm';
 import { setTopNews, clearTopNews } from '../actions/news';
 import NewsList from '../components/NewsList';
 import { connect } from 'react-redux';
@@ -31,7 +31,7 @@ const Home = ({ setTopNews, news, clearTopNews }) => {
 
   return (
     <Fragment>
-      <CategorySourceSearch
+      <CategorySourceSearchForm
         onCategorySourceSearch={categorySourceUrl => {
           handleCategorySourceSearch(categorySourceUrl);
         }}
