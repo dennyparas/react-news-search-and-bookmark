@@ -1,0 +1,41 @@
+.heroContainer-dark {
+  background-color: rgb(168, 168, 168);
+}
+.heroContainer-light {
+  background-color: #fdfdfd;
+}
+
+.circle-dark {
+  margin-top: 7px;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+}
+.circle-light {
+  margin-top: 7px;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: rgb(219, 219, 219);
+}
+
+.mainBg-light {
+  background-color: #fff !important;
+}
+
+.mainBg-dark {
+  background-color: rgb(209, 209, 209) !important;
+}
+
+.icon-button {
+  cursor: pointer;
+}
+
+.urlImage {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

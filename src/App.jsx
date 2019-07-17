@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
 // React Router Dom
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,8 +14,13 @@ import Bookmarks from './pages/Bookmarks';
 import PageNotFound from './pages/PageNotFound';
 
 import TopNav from './layout/TopNav';
+import { getNewsSource, setTheme } from './actions/news';
 
 const App = () => {
+  useEffect(() => {
+    store.dispatch(getNewsSource());
+    store.dispatch(setTheme());
+  }, []);
   return (
     <Provider store={store}>
       <Router>
