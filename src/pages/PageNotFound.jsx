@@ -8,7 +8,7 @@ const PageNotFound = () => {
     <Container>
       <Row className='justify-content-md-center my-5'>
         <Col sm={8}>
-          <p class='h3 text-center'>Page Not Found</p>
+          <p className='h3 text-center'>Page Not Found</p>
         </Col>
       </Row>
     </Container>
