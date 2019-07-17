@@ -110,3 +110,10 @@ export const setTopNews = (url, page) => async (dispatch, getState) => {
     });
   }
 };
+
+//  Clear top news
+export const clearTopNews = () => {
+  return {
+    type: CLEAR_TOP_NEWS
+  };
+};

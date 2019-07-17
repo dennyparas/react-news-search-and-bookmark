@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import CategorySourceSearch from '../components/CategorySourceSearch';
-import { setTopNews } from '../actions/news';
+import { setTopNews, clearTopNews } from '../actions/news';
 import NewsList from '../components/NewsList';
 import { connect } from 'react-redux';
 
-const Home = ({ setTopNews, news }) => {
+const Home = ({ setTopNews, news, clearTopNews }) => {
   const [page, setPage] = useState(1);
   const [categorySourceUrl, setCategorySourceUrl] = useState('');
 
@@ -22,6 +22,10 @@ const Home = ({ setTopNews, news }) => {
       const url = `${categorySourceUrl}`;
       setTopNews(url, page);
     }
+
+    return () => {
+      clearTopNews();
+    };
     // eslint-disable-next-line
   }, [categorySourceUrl, page]);
 
@@ -49,5 +53,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { setTopNews }
+  { setTopNews, clearTopNews }
 )(Home);

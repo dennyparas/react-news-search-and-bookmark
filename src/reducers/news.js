@@ -51,7 +51,8 @@ export default (state = initialState, action) => {
     case CLEAR_TOP_NEWS:
       return {
         ...state,
-        newsItems: []
+        newsItems: [],
+        newsItemsTotal: null
       };
     case TOP_NEWS_ERROR:
       return {
