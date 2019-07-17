@@ -45,8 +45,5 @@ const NewsList = ({ newsItems, loading, newsItemsTotal, theme, loadMore }) => {
     </Container>
   );
 };
-NewsList.defaultProps = {
-  withSearch: false
-};
 
 export default NewsList;

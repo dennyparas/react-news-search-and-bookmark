@@ -15,11 +15,12 @@ import PageNotFound from './pages/PageNotFound';
 
 import TopNav from './layout/TopNav';
 import { getNewsSource, setTheme } from './actions/news';
-
+import { getBookmarkItems } from './actions/bookmarks';
 const App = () => {
   useEffect(() => {
     store.dispatch(getNewsSource());
     store.dispatch(setTheme());
+    store.dispatch(getBookmarkItems());
   }, []);
   return (
     <Provider store={store}>

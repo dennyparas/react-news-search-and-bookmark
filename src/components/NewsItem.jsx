@@ -4,12 +4,39 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Truncate from 'react-truncate';
 import Moment from 'react-moment';
+import { connect } from 'react-redux';
+import { bookmarkItem, unBookmarkItem } from '../actions/bookmarks';
+import { FaRegBookmark, FaBookmark } from 'react-icons/fa';
 
-const NewsItem = ({ item, theme }) => {
+const NewsItem = ({
+  item,
+  theme,
+  bookmarkItem,
+  unBookmarkItem,
+  bookmarkItems
+}) => {
+  const isBookmark = item => {
+    if (bookmarkItems !== null) {
+      return (
+        bookmarkItems.findIndex(bookmark => bookmark.title === item.title) > -1
+      );
+    }
+  };
+  const bookmark = item => {
+    bookmarkItem(item);
+  };
+
+  const unBookmark = item => {
+    unBookmarkItem(item);
+  };
+
   return (
     <Col xs={12} sm={6} md={6} lg={4} xl={4} className='my-2'>
       <Card>
-        <Card.Img variant='top' src={item.urlToImage} />
+        <div
+          className='urlImage'
+          style={{ backgroundImage: `url(${item.urlToImage})` }}
+        />
 
         <Card.Body>
           <Card.Title>
@@ -29,6 +56,19 @@ const NewsItem = ({ item, theme }) => {
           <Button variant={theme} href={item.url} target='_blank'>
             Go to Page
           </Button>
+          {isBookmark(item) ? (
+            <FaBookmark
+              className='float-right mt-2 icon-button'
+              size='1.5em'
+              onClick={() => unBookmark(item)}
+            />
+          ) : (
+            <FaRegBookmark
+              className='float-right mt-2 icon-button'
+              size='1.5em'
+              onClick={() => bookmark(item)}
+            />
+          )}
         </Card.Body>
         <Card.Footer>
           <small className='text-muted'>
@@ -40,4 +80,11 @@ const NewsItem = ({ item, theme }) => {
   );
 };
 
-export default NewsItem;
+const mapStateToProps = state => ({
+  bookmarkItems: state.bookmarks.bookmarkItems
+});
+
+export default connect(
+  mapStateToProps,
+  { bookmarkItem, unBookmarkItem }
+)(NewsItem);
