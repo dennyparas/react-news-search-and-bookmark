@@ -9,7 +9,7 @@ import store from './store';
 
 // Pages
 import Home from './pages/Home';
-import Search from './pages/Search';
+import AdvanceSearch from './pages/AdvanceSearch';
 import Bookmarks from './pages/Bookmarks';
 import PageNotFound from './pages/PageNotFound';
 
@@ -28,7 +28,7 @@ const App = () => {
           <TopNav />
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/search' exact component={Search} />
+            <Route path='/advance-search' exact component={AdvanceSearch} />
             <Route path='/bookmarks' exact component={Bookmarks} />
             <Route component={PageNotFound} />
           </Switch>
