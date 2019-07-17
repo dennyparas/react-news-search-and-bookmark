@@ -6,6 +6,16 @@ A web app (single page application) created with react.js, redux and react-boots
 
 [Live Demo](http://new-search-and-bookmark.herokuapp.com/)
 
+### Features
+
+- Search top news by country, category or by media source
+- Can bookmark individual news (all bookmarks are save in browser localstorage)
+- Switch from dark mode to light mode
+
+### Todos
+
+- Advance search page
+
 ### Overview
 
 ![react-news-1](https://user-images.githubusercontent.com/16351223/61396735-f22f7e80-a8fa-11e9-9b47-36dd8ee626d5.png)
@@ -23,6 +33,8 @@ REACT_APP_NEWS_API_KEY = 'add your news api key here'
 for production create an .env file outside the src folder and copy the key below:
 
 NEWS_API_KEY = 'add your news api key here'
+
+--
 
 ```
 npm install
