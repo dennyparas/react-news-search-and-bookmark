@@ -7,6 +7,7 @@ import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { bookmarkItem, unBookmarkItem } from '../actions/bookmarks';
 import { FaRegBookmark, FaBookmark } from 'react-icons/fa';
+import NewsDefaultImage from './news-default-image.jpg';
 
 const NewsItem = ({
   item,
@@ -33,10 +34,17 @@ const NewsItem = ({
   return (
     <Col xs={12} sm={6} md={6} lg={4} xl={4} className='my-2'>
       <Card>
-        <div
-          className='urlImage'
-          style={{ backgroundImage: `url(${item.urlToImage})` }}
-        />
+        {item.urlToImage ? (
+          <div
+            className='urlImage'
+            style={{ backgroundImage: `url(${item.urlToImage})` }}
+          />
+        ) : (
+          <div
+            className='urlImage'
+            style={{ backgroundImage: `url(${NewsDefaultImage})` }}
+          />
+        )}
 
         <Card.Body>
           <Card.Title>
