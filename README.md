@@ -2,19 +2,11 @@
 
 A web app (single page application) created with react.js, redux and react-bootstrap using free news api.
 
-## Demo
-
-[Live Demo](http://new-search-and-bookmark.herokuapp.com/)
-
 ### Features
 
 - Search top news by country, category or by media source
 - Can bookmark individual news (all bookmarks are save in browser localstorage)
 - Switch from dark mode to light mode
-
-### Todos
-
-- Advance search page
 
 ### Overview
 
